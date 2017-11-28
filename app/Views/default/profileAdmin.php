@@ -53,7 +53,7 @@
              </div>
              <div class="row">
               <div class="col-sm-12">
-        <table class="table table-hover dataTable no-footer  table-responsive-md">
+        <table class="dataTables_wrapper form-inline dt-bootstrap no-footer">
           <thead class="table-light">
             <tr>
               <th>Numeros D'Emprunt</th>
