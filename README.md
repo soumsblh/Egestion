@@ -1,22 +1,14 @@
-## W
+# Quelques consignes Ã  respecter afin d'avoir un code lisible et fonctionnel par tous
 
-W est un framework minimaliste. Il suit les structures et les grand thèmes des frameworks PHP OO MVC actuels, tout en en facilitant l'approche. Ce framework possède toutefois de nombreuses propriétés diverses permettant de répondre aux cas les plus habituels.
+1. Ecrire en anglais, sauf les commentaires
 
----
+2. Dans le dossier Controller :
+  - nommer les fichiers de la faÃ§on suivante DefaultController.php
+  - nommer les class de la faÃ§on suivante DefaultController
+  - nommer les fonctions de la faÃ§on suivante deleteByArticle
 
-#### Pour télécharger le framework et en consulter la documentation :
+3. Dans le dossier Model :
+  - nommer les fichiers de la faÃ§on suivante DefaultModel.php
+  - nommer les class de la faÃ§on suivante DefaultModel
+  - nommer les fonctions de la faÃ§on suivante deleteByArticle
 
-1. Dans un terminal : 
-
-  ```
-  cd c:/xampp/htdocs
-  composer create-project webforce3/w nom_de_mon_projet
-  ```
-
-2. Naviguez vers http://localhost/nom_de_mon_projet/docs/tuto/
-
-
-#### Crédits :
-* Axel Wargnier : [@axessweb](https://github.com/axessweb) (lead dev)
-* Guillaume Sylvestre : [@gsylvestre](https://github.com/gsylvestre) (original dev)
-* Matthieu Mota : [@MatthieuMota](https://github.com/MatthieuMota)
