@@ -280,10 +280,11 @@ abstract class Model
 		foreach($data as $key => $value){
 			$sql .= ":$key, ";
 		}
+
+
 		// Supprime les caractères superflus en fin de requète
 		$sql = substr($sql, 0, -2);
 		$sql .= ')';
-
 		$sth = $this->dbh->prepare($sql);
 		foreach($data as $key => $value){
 			if(is_int($value)){

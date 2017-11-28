@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?>
 <body class="align" id="homeco">
-<div id="register">
+<div id="login">
   <div class="container register">
     <div class="row">
       <form class="col-md-4 col-md-push-4" method="POST">

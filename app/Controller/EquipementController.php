@@ -46,45 +46,47 @@ class EquipementController extends Controller
         {
 
             $this->allowTo(['admin']);
-            
-            $id_Materiels  = null;
-            $TypeMateriels  = null;
-            $nom_marque   = null;
+
+            $id_type  = null;
+            $id_marque   = null;
             $ModelMateriel  = null;
-            $QuantiteEmprunter = null;
+            $QuantiteMateriels = null;
             $id_Etat = null;
 
-            
+            $equipement_manager = new EquipementModel();
+            $listtype = $equipement_manager->listtype();
+            $listMarque = $equipement_manager->listMarque();
 
-            $equipement_manager = new EquipementModel();  
-            $listMat = $equipement_manager->listMat();
-            
-            
             if(!empty($_POST))
             {
-                $id_Materiels  = trim($_POST['id_Materiels']);
-                $TypeMateriels  = trim($_POST['TypeMateriels']);
-                $nom_marque  =trim($_POST['nom_marque']);
-                $QuantiteEmprunter     = $_POST['QuantiteEmprunter'];
+                $id_type  = trim($_POST['id_type']);
+                $id_marque   = trim($_POST['id_marque']);
+                $QuantiteMateriels     = $_POST['QuantiteMateriels'];
                 $ModelMateriel     = trim($_POST['ModelMateriel']);
                 $id_Etat      = trim($_POST['id_Etat']);
 
-
-       
               $auth_manager = new \W\Security\AuthentificationModel();
 
                  $result = $equipement_manager->insert([
-                    'id_Materiels'     => $id_Materiels,
-                    'TypeMateriels'     => $TypeMateriels,
-                    'nom_marque'      => $nom_marque,    
-                    'QuantiteEmprunter' => $QuantiteEmprunter ,
-                    'ModelMateriel '         => $ModelMateriel ,
-                    'id_Etat'         => $id_Etat,
-                  ], $equipement_manager = true);
+                     'QuantiteMateriels'  => $QuantiteMateriels ,
+                     'ModelMateriel'     => $ModelMateriel ,
+                     'id_type'           => $id_type,
+                     'id_Etat'            => '1',
+                     'id_marque'         => $id_marque,
+                  ], $id_Materiels = true);
 
-               /*$this->redirectToRoute('default_profile_admin');*/
-            }   
-            debug($id_Materiels);      
-            $this->show('equipement/Newequipement' , ['id_Materiels'=>$id_Materiels ,'TypeMateriels'=>$TypeMateriels ,'nom_marque'=>$nom_marque, 'QuantiteEmprunter'=>$QuantiteEmprunter ,'ModelMateriel' => $ModelMateriel , 'id_Etat'=>$id_Etat]);
+
+
+
+                $this->redirectToRoute('default_profile_admin');
+            }
+            $this->show('equipement/Newequipement' , [
+                'listMarque' =>$listMarque,
+                'listtype' => $listtype,
+                'id_type'=>$id_type ,
+                'id_marque' => $id_marque,
+                'QuantiteMateriels'=>$QuantiteMateriels ,
+                'ModelMateriel' => $ModelMateriel ,
+                'id_Etat'=>$id_Etat]);
         }
   }// Classe Equipement

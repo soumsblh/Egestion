@@ -48,7 +48,6 @@ class EmpruntController extends Controller
             $id_Etat      = trim($_POST['id_Etat_1']);
 
 
-   
           $auth_manager = new \W\Security\AuthentificationModel();
 
              $result = $event_manager->insert([

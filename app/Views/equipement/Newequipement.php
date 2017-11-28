@@ -7,21 +7,24 @@
     <div class="row">
       <form class="col-md-4 col-md-push-4" method="POST">
         <h2>Ajouter un Matériels :</h2>
-           <div class="form-group">
-            <label for="">Materiels :</label>
-               <label class="control-label" for="TypeMateriels">Numéros de Matériels:</label>
-                <input type="text" class="form-control" id="id_type" name="id_type"  >
-            </div>   
-        <div class="form-group ">
-          <label class="control-label" for="TypeMateriels">Type de Matériel (ex : Souris/Clavier) :</label>
-          <input type="text" class="form-control" id="TypeMateriels" name="TypeMateriels" ">
-        </div>
-
-        <div class="form-group">
-          <label class="control-label" for="nom_marque">Marque:</label>
-          <input type="text" class="form-control" id="nom_marque" name="nom_marque" ">
-        </div>
-
+          <div class="form-group">
+              <label for="">Materiels :</label>
+              <select class="form-control" name="id_type">
+                  <option disabled selected>Veuillez Sélectionné le matériel</option>
+                  <?php foreach ($listtype as $type) : ?>
+                      <option name="id_type" value="<?= $type['id_type'] ?>" ><?= $type['TypeMateriel'];?></option>
+                  <?php endforeach; ?>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="">Materiels :</label>
+              <select class="form-control" name="id_marque">
+                  <option disabled selected>Veuillez Sélectionné le matériel</option>
+                  <?php foreach ($listMarque as $marque) : ?>
+                      <option name="id_marque" value="<?= $marque['id_marque'] ?>" ><?= $marque['nom_marque'];?></option>
+                  <?php endforeach; ?>
+              </select>
+          </div>
         <div class="form-group">
           <label class="control-label" for="ModelMateriel">Model Materiel :</label>
           <input type="text" class="form-control" id="ModelMateriel" name="ModelMateriel" ">
@@ -43,7 +46,7 @@
           </div>
          <div class="form-group">
               <label for="">Quantité mis à disposition :</label>
-              <input type="number" class="form-control" name="QuantiteEmprunter" id="QuantiteEmprunter" " >
+              <input type="number" class="form-control" name="QuantiteMateriels" id="QuantiteMateriels" " >
         </div>
         <button type="submit" class="btn btn-default" name="button-register">Enregistrer</button>
       </form>

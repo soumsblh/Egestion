@@ -3,7 +3,6 @@
 namespace Model;
 
 use \W\Model\Model;
-use  Model\EmpruntModel;
 
 class EmpruntModel extends Model
 {

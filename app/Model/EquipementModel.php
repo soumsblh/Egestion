@@ -3,7 +3,7 @@
 namespace Model;
 
 use \W\Model\Model;
-use  Model\EquipementModel;
+
 
 class EquipementModel extends Model
 {
@@ -31,7 +31,7 @@ class EquipementModel extends Model
 
     public function countEquipement()
     {
-      $query = $this->dbh->query('SELECT * FROM `materiels`, type,etat,marque WHERE materiels.id_Materiels = type.id_type AND materiels.id_Materiels = etat.id_Etat AND materiels.id_Materiels =marque.id_marque');
+      $query = $this->dbh->query('SELECT * FROM `materiels`, type,etat,marque WHERE materiels.id_type = type.id_type AND materiels.id_Etat = etat.id_Etat AND materiels.id_marque = marque.id_marque');
       return $query->fetchAll();
     }
     public function countNbrEquipement()
@@ -40,6 +40,17 @@ class EquipementModel extends Model
       return $query->fetch();
     }
 
+    public function listMarque()
+    {
+        $query = $this->dbh->query('SELECT * FROM `marque`');
+        return $query->fetchAll();
+    }
+
+    public function listtype()
+    {
+        $query = $this->dbh->query('SELECT * FROM `type`');
+        return $query->fetchAll();
+    }
 
 
 } //class EventsModel
