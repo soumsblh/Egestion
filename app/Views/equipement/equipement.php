@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Liste des utilisateurs Administrateur']) ?>
+<?php $this->layout('layout', ['title' => 'Liste des Materiaux']) ?>
 
 <?php $this->start('main_content') ?>
 <div id="userslist">
@@ -17,7 +17,7 @@
             <li>
               <a href="<?= $this->url('equipement_equipement'); ?>" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Materiels <span class="badge"><?= $count_list['list']; ?></span></a>
             </li>
-             <li>
+            <li>
               <a href="<?= $this->url('emprunt_emprunteur'); ?>" class="list-group-item"><i class="fa fa-users" aria-hidden="true"></i> Emprunteurs <span class="badge"><?= $count_emprunteur['emprunteur']; ?></span></a>
             </li>
           </ul>
@@ -33,42 +33,32 @@
 
       </div>
       <div class="col-md-10 col-sm-9">
-        <h2 class="text-center">Utilisateurs</h2>
+        <h2 class="text-center">Matériaux</h2>
         <hr>
-         <a class="btn btn-success"  href="<?php echo $this->url('security_register'); ?>">Ajouter un Utilisateur </a>
-        <table class="table table-responsive-lg">
+         <a class="btn btn-success"  href="<?php echo $this->url('equipement_Newequipement'); ?>">Ajouter un Matériel </a>
+        <table class="table table-responsive-sm">
           <thead class="table-dark">
             <tr>
-              <th>Numéros</th>
-              <th>Nom</th>
-              <th>Prénom</th>
-              <th>Ecole</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Modifications</th>
+              <th>Numéros Materiel</th>
+              <th>Type de matériel / Marque / Modèle </th>
+              <th>Etat du Matériel</th>
+              <th>Quantité en Stock</th>
+              <th>Modification</th>
             </tr>
-          </thead>  <?php foreach ($user_list as $list) : ?>
+          </thead>  
+           <?php foreach ($listEquip as $list) : ?>
           <tbody>
             <tr>
-              <td><?= $list['id']; ?></td>
-              <td><?= $list['lastname']; ?></td>
-              <td><?= $list['firstname']; ?></td>
-              <td><?= $list['NomEcole']; ?></td>
-              <td><?= $list['email']; ?></td>
-              <td><?= $list['role']; ?></td>
-              <td>
-              <form class="form-inline" method="post">
-                <select class="form-control" name="role">
-                  <option disabled selected>Sélectionner le Role</option>
-                  <option class="" value="admin">Administrateur</option>
-                  <option class="" value="user">Utilisateur</option>
-                </select>
-                <button type="submit" name="button-<?= $list['id']; ?>">Changer le role</button>
-              </form>
-              </td>
-            </tr>
-          
-          </tbody>  <?php endforeach; ?>
+              <td><?= $list['id_Materiels']; ?></td>
+              <td><?= $list['TypeMateriel']." / ".$list['nom_marque']." / ".$list['ModelMateriel']; ?></td>
+              <td><?= $list['Libelle']; ?></td>
+              <td><?= $list['QuantiteMateriels']." Disponible "; ?></td>
+            <td>
+                <a href="<?= $this->url('emprunt_update' , ['id' => $event['id_Materiels'] ] )?>"><i class="fa fa-scissors" aria-hidden="true"></i> Modifier</a>
+            </td> 
+            </tr>      
+          </tbody>  
+        <?php endforeach; ?>
         </table>
       </div>
     </div>  <!-- .row -->

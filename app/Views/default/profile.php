@@ -15,10 +15,10 @@
               <a href="<?= $this->url('default_userslist'); ?>" class="list-group-item"><i class="fa fa-user-circle" aria-hidden="true"></i> Utilisateurs <span class="badge"><?= $count_users['users']; ?></span></a>
             </li>
             <li>
-              <a href="<?= $this->url('default_equipement'); ?>" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Materiels <span class="badge"><?= $count_list['list']; ?></span></a>
+              <a href="<?= $this->url('emprunt_equipement'); ?>" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Materiels <span class="badge"><?= $count_list['list']; ?></span></a>
             </li>
              <li>
-              <a href="<?= $this->url('default_emprunteur'); ?>" class="list-group-item"><i class="fa fa-users" aria-hidden="true"></i> Emprunteurs <span class="badge"><?= $count_emprunteur['emprunteur']; ?></span></a>
+              <a href="<?= $this->url('emprunt_emprunteur'); ?>" class="list-group-item"><i class="fa fa-users" aria-hidden="true"></i> Emprunteurs <span class="badge"><?= $count_emprunteur['emprunteur']; ?></span></a>
             </li>
           </ul>
         </div>
@@ -94,7 +94,6 @@
                 </td>
                 <td>
                   <a href="<?= $this->url('emprunt_update' , ['id' => $event['id_Emprunt'] ] )?>"><i class="fa fa-scissors" aria-hidden="true"></i> Modifier</a>
-                  <a href="<?= $this->url('emprunt_view'   , ['id' => $event['id_Emprunt'] ] )?>"><i class="fa fa-book" aria-hidden="true"></i> Lire</a>
                 </td>           
             </tr>
           </tbody>      

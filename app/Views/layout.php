@@ -10,16 +10,32 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/font-awesome.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
 	<!-- FAVICON -->
+
+	<link rel="icon" type="img/ico" href="<?= $this->assetUrl('img/favicon.ico') ?>" />
+	<link rel="icon" type="img/ico" href="<?= $this->assetUrl('img/favicon.ico') ?>" />
 	<link rel="icon" type="img/ico" href="<?= $this->assetUrl('img/favicon.ico') ?>" />
 
 </head>
 <header>
-    <div class="flex">
-		 <a class="logo" href="<?= $this->url('default_home') ?>"></a>
-  	</div>
+    	<?php if($w_user['Id_Ecole'] == 1) : ?>
+    	<nav class="navbar-fixed" id="flexEpsi">	
+		 <a class="logoepsi" href="<?= $this->url('default_home') ?>"></a>
+		 <?php elseif($w_user['Id_Ecole'] == 2) : ?>
+		<nav class="navbar-fixed" id="flexOSS">
+		 <a class="logooss" href="<?= $this->url('default_home') ?>"></a>
+		<?php elseif($w_user['Id_Ecole'] == 3) : ?>
+		<nav class="navbar-fixed" id="flexWIS">
+		 <a class="logowis" href="<?= $this->url('default_home') ?>"></a>	
+		 <?php else : ?>
+		<nav class="navbar-fixed" id="">
+		<a class="" href="<?= $this->url('default_home') ?>"></a>
+  		<?php endif; ?>
+      	<p class="navbar-text navbar-right" style="margin-right: 18px;">
+	      <i class="fa fa-user-circle-o" aria-hidden="true" style="color:white;"> <?php echo $w_user['lastname']." ".$w_user['firstname']; ?></i>
+	  	</p>
+	</nav>
 </header>	
 		<section>
 			<?= $this->section('main_content') ?>
@@ -31,11 +47,11 @@
 			<script src="<?= $this->assetUrl('js/jquery.validate.min.js') ?>" charset="utf-8"></script>
 			<script src="<?= $this->assetUrl('js/additional-methods.min.js') ?>" charset="utf-8"></script>
 			<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/lottie.min.js" charset="utf-8"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"> </script>
+		    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js" charset="utf-8"> </script>
+		    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" charset="utf-8"> </script>
+		    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js" charset="utf-8"> </script>
 			<script src="<?= $this->assetUrl('js/main.js') ?>" charset="utf-8"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-		    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
-		    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 			<?= $this->section('javascript') ?>
 		</footer>
 </html>

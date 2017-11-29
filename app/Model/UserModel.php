@@ -5,6 +5,7 @@
   use \W\Model\Model;
   use \W\Model\UsersModel;
 
+
   class UserModel extends UsersModel
   {
   	//on herite de tout ce qu il ya dans W
@@ -39,10 +40,10 @@
       return $query->fetchColumn();
   }
 
-   public function getAllEventsByUser($id_Emprunteur)
+   public function getLogoByUser($Id_Ecole)
   {
     //regroupe les emprunt par emprunteur
-    $sql = ('SELECT * FROM emprunt WHERE id_Emprunteur = ' . $id_Emprunteur);
+    $sql = ('SELECT logo FROM users, ecole WHERE ecole.Id_Ecole = users.Id_Ecole');
     $sth = $this->dbh->prepare($sql);
     $sth->execute();
 
@@ -64,4 +65,5 @@
     $query = $this->dbh->query('SELECT id,firstname,lastname,role,email,NomEcole,ecole.Id_Ecole FROM users,ecole WHERE users.Id_Ecole = ecole.Id_Ecole');
     return $query->fetchAll();
   }
+
 }

@@ -59,7 +59,7 @@ class SecurityController extends Controller
 
             if( empty($errors) ){
                 $auth_manager = new \W\Security\AuthentificationModel();
-                  //si il n'y a pas d'erreur on inscrit lutilisateur en bdd
+                  //si il n'y a pas d'erreur on inscrit l'utilisateur en bdd
                   $user_manager->insert([
 
                       'firstname'=> $firstname,
@@ -76,8 +76,8 @@ class SecurityController extends Controller
                   if ($user_id) { // Si le couple username/password est valid
                       $user_manager = new UserModel();
                       $user = $user_manager->find($user_id); // Récupére toutes les infos de l'utilisateur qui se connecte
-                      $auth_manager->logUserIn($user); // La connexion se fait
-                      $this->redirectToRoute('default_userslist');
+                      /*$auth_manager->logUserIn($user); // La connexion se fait*/
+                      
                   }
 
             }
@@ -85,7 +85,7 @@ class SecurityController extends Controller
 
                 $message = $errors;
             }
-
+              $this->redirectToRoute('default_userslist');      
           }
         $this->show('security/register' , ['message' => $message ,'firstname'=>$firstname,'lastname' => $lastname,'username' => $username , 'email' => $email,'Id_Ecole' => $Id_Ecole  ]);
     }
@@ -110,6 +110,7 @@ class SecurityController extends Controller
                 $this->redirectToRoute('default_frontPage');
             }
         }
+
 
     
     // J'injecte la variable messages dans ma vue
@@ -268,5 +269,17 @@ class SecurityController extends Controller
 		$this->show('security/changeInfos', ['profil' => $profil, 'message' => $message]);
 
   }
+
+  public function DeleteCacheSession()
+  {
+    /* $auth_manager = new \W\Security\AuthentificationModel();
+        $auth_manager->logUserOut(); // Déconnecte l'utilisateur connecté
+        $this->redirectToRoute('default_frontPage');
+    if () {
+      # code...
+    }
+*/
+  }
+
 
 } //class SecurityController

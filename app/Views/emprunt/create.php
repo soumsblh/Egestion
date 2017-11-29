@@ -20,7 +20,7 @@
               <select class="form-control" name="id_Materiels">
                  <option>Veuillez Sélectionné le(s) matériel(s) a emprunter</option>
                <?php foreach ($listMat as $mat) : ?>
-                <option><?= $mat['TypeMateriel']."  ".$mat['nom_marque']."  ".$mat['ModelMateriel'];?></option>
+                <option value="<?= $mat['id_Materiels'] ?>" ><?= $mat['TypeMateriel']."  ".$mat['nom_marque']."  ".$mat['ModelMateriel'];?></option>
               <?php endforeach; ?>
               </select>
             </div>  
@@ -33,14 +33,14 @@
               </div>
             <div class="form-group">
               <label for="">Quantité emprunter :</label>
-              <input type="number" class="form-control" name="QuantiteEmprunter">
+              <input type="number" class="form-control" name="QuantiteEmprunter" >
             </div>
             <div class="form-group">
               <label for="">Etat de matériel à la sortie :</label>
-              <select class="form-control" name="id_Etat">
+              <select class="form-control" name="id_Etat_1">
                  <option>Veuillez Sélectionné l'etat du matériel a emprunter</option>
                <?php foreach ($listetat as $etat) : ?>
-                <option value=""><?= $etat['Libelle'];?></option>
+                <option value="<?= $event['id_Etat_1']?>"><?= $etat['Libelle'];?></option>
               <?php endforeach; ?>
               </select>
             </div>

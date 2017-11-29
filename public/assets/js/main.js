@@ -16,3 +16,18 @@ var select = function(s) {
 
 	anim = lottie.loadAnimation(animData);
  anim.setSpeed(1);
+
+
+      $('.datepicker').datepicker({
+        //language: 'fr',
+        todayHighlight: true,
+            todayBtn: "linked",
+    language: "fr",
+        startDate: '-3d'
+      })
+              $('.input-group.date').datepicker({
+        language: 'fr',
+        startDate: 'd',
+        keyboardNavigation: false,
+        todayHighlight: true
+    });

@@ -26,6 +26,7 @@ html{ width: 100%; height:100%; }
   background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 }
+
 .login { 
   position: absolute;
   top: 50%;
@@ -83,7 +84,7 @@ html{ width: 100%; height:100%; }
   transition: box-shadow .5s ease;
 }
 
-.logo {
+.logoepsi {
     display: inline-block;
     width: 127px;
     min-width: 127px;
@@ -96,7 +97,43 @@ html{ width: 100%; height:100%; }
     transition: all .5s ease;
 }
 
-.logo:hover{
+.logoepsi:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.logowis{
+    display: inline-block;
+    width: 127px;
+    max-width: 77px;
+    height: 82px;
+    margin: 13px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../img/wis.png);
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.logowis:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.logooss{
+    display: inline-block;
+    width: 70px;
+    min-width: 70px;
+    height: 82px;
+    margin: 13px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../img/oss.png);
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.logooss:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -121,13 +158,30 @@ html{ width: 100%; height:100%; }
 .dropdown-menu {
   padding:10px;
 }
-.flex {
+  #flexEpsi {
     height: 100px;
-
     top: 0;
     left: 0;
     right: 0;
     background-color: #271549;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    }
+    #flexOSS {
+    height: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #A68F46;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    }
+    #flexWIS {
+    height: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #282828;
     background-repeat: no-repeat;
     background-position: right bottom;
     }
