@@ -3,3 +3,7 @@ app/config.php
 /phpDocumentor.phar
 *.log
 .idea/*
+/sql/*
+/Uml/*
+docs/tuto/Guide Utilisateur.pptx
+.README GUILLAUME.txt
