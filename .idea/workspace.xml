@@ -2,6 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="119cbb6f-27f2-4d20-8100-57dc63a23758" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/img/parcours-requete-simple.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/css/prism.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/js/prism.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/404.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/configuration.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/controleurs.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/conventions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/creer_une_page.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/installation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/modeles.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/presentation.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/routes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/utilisateurs.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/tuto/pages/vues.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,7 +111,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -107,14 +124,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Newequipement.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Views/equipement/Newequipement.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-36">
-              <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-              <folding>
-                <marker date="1511988752034" expanded="true" signature="2748:2767" ph="..." />
-              </folding>
+            <state relative-caret-position="100">
+              <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -303,7 +318,7 @@
       <workItem from="1511857121005" duration="1089000" />
       <workItem from="1511858285557" duration="225000" />
       <workItem from="1511858590329" duration="55301000" />
-      <workItem from="1511971271276" duration="3926000" />
+      <workItem from="1511971271276" duration="4031000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1511858842494</created>
@@ -375,11 +390,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512003113413</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Last Version with documentation">
+      <created>1512003167732</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1512003167732</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64821000" />
+    <option name="totallyTimeSpent" value="64926000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -484,7 +506,8 @@
     <MESSAGE value="UserModel modif" />
     <MESSAGE value="Index de redirection" />
     <MESSAGE value="Last Version before documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Last Version before documentation" />
+    <MESSAGE value="Last Version with documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last Version with documentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -604,14 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -965,6 +980,14 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
