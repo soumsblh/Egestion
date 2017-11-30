@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Créer un Matériels']) ?>
+<?php $this->layout('layout', ['title' => 'Créer un Matériel']) ?>
 
 <?php $this->start('main_content') ?>
 <body class="align" id="homeco">
@@ -6,7 +6,7 @@
   <div class="container register">
     <div class="row">
       <form class="col-md-4 col-md-push-4" method="POST">
-        <h2>Ajouter un Matériels :</h2>
+        <h2>Ajouter un Matériel :</h2>
           <div class="form-group">
               <label for="">Type :</label>
               <select class="selectpicker form-control" data-live-search="true" name="id_type">
@@ -19,14 +19,14 @@
           <div class="form-group">
               <label for="">Marque :</label>
               <select class="selectpicker form-control" data-live-search="true" name="id_marque">
-                  <option disabled selected>Veuillez Sélectionner le matériel</option>
+                  <option disabled selected>Veuillez Sélectionner la marque</option>
                   <?php foreach ($listMarque as $marque) : ?>
                   <option name="id_marque" value="<?= $marque['id_marque'] ?> data-tokens="<?= $marque['nom_marque'];?>" ><?= $marque['nom_marque'];?></option>
                   <?php endforeach; ?>
               </select>
           </div>
         <div class="form-group">
-          <label class="control-label" for="ModelMateriel">Model Materiel :</label>
+          <label class="control-label" for="ModelMateriel">Modèle Materiel :</label>
           <input type="text" class="form-control" id="ModelMateriel" name="ModelMateriel" ">
         </div>
         <div class="form-check form-check-inline">
@@ -38,7 +38,7 @@
                 <input class="form-check-input" type="radio"  id="id_Etat" name="id_Etat"  value="2"> Moyen
             </label>
             <label class="form-check-label" for="id_Etat">
-                <input class="form-check-input" type="radio"  id="id_Etat" name="id_Etat"  value="3"> Mediocre
+                <input class="form-check-input" type="radio"  id="id_Etat" name="id_Etat"  value="3"> Médiocre
             </label>
             <label class="form-check-label" for="id_Etat">
                 <input class="form-check-input" type="radio"  id="id_Etat" name="id_Etat"  value="4"> Mauvais

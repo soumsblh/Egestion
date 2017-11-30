@@ -29,7 +29,7 @@
             </div>
              <hr>
             <div class="form-group">
-              <label for="QuantiteEmprunter">Quantite Emprunter :</label>
+              <label for="QuantiteEmprunter">Quantité Emprunter :</label>
               <input type='number' name='QuantiteEmprunter' class="form-control" value="<?= $emprunt['QuantiteEmprunter']; ?>"/>
             </div>
             <div class="form-group">

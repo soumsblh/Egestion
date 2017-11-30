@@ -24,7 +24,7 @@
                 <?php endforeach; ?>
             </select>
         </div>
-              <label for="">Date Prévu de Retour :</label>
+              <label for="">Date Prévue de Retour :</label>
                 <div class="input-group date" style="height:25px;" data-provide="datepicker">
                 <input type="text" class="form-control" name="DatePrevRetour">
                 <div class="input-group-addon">
@@ -32,11 +32,11 @@
                 </div>
               </div>
             <div class="form-group">
-              <label for="">Quantité emprunter :</label>
+              <label for="">Quantité empruntée :</label>
               <input type="number" class="form-control" name="QuantiteEmprunter" >
             </div>
             <div class="form-group">
-              <label for="">Etat de matériel à la sortie :</label>
+              <label for="">Etat du matériel à la sortie :</label>
               <select class="form-control" name="id_Etat_1">
                  <option>Veuillez Sélectionner l'etat du matériel à emprunter</option>
                <?php foreach ($listetat as $etat) : ?>

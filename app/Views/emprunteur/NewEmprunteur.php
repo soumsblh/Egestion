@@ -8,11 +8,11 @@
             <form class="col-md-4 col-md-push-4" method="POST">
                 <h2>Ajouter un Emprunteur </h2>
                 <div class="form-group">
-                    <label class="control-label" for="Nom">Nom du l'emprunteur :</label>
+                    <label class="control-label" for="Nom">Nom de l'emprunteur :</label>
                     <input type="text" class="form-control" id="Nom" name="Nom" ">
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="Prenom">Prénom du l'emprunteur :</label>
+                    <label class="control-label" for="Prenom">Prénom de l'emprunteur :</label>
                     <input type="text" class="form-control" id="Prenom" name="Prenom" ">
                 </div>
                 <div class="form-group">

@@ -24,8 +24,8 @@
         </div>
         <hr>
         <div class="list-group">
-            <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item active"><i class="fa fa-database">  Exporté Votre Base</i></a>
-            <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-success active"><i class="fa fa-database"> Importé Votre Base</i></a>
+            <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item active"><i class="fa fa-database">  Exporter Votre Base</i></a>
+            <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-success active"><i class="fa fa-database"> Importer Votre Base</i></a>
         </div>
         <div class="list-group">
         <a href="<?= $this->url('security_changeInfos'); ?>" class="list-group-item list-group-item active "><i class="fa fa-user-circle"> Mes informations</i></a>
@@ -33,21 +33,21 @@
         </div>
           <div class="well">
               <h4>Information sur les Emprunts</h4>
-              <p>Tous les emprunt sont initilisé de façon a ce que le dernier emprunt saisie sont visible l'ordre sera le suivant :
-                  <li>Les Emprunts ayant la date de retour Prévu expiré : <strong>En rouge</strong></li>
-                  <li>Les Emprunts ayant la date de retour Prévu qui n'est pas encore expiré : <strong>En Vert</strong></li>
-                  <li>Les Emprunts Rendu : <strong>En Blue</strong></li>
+              <p>Tous les emprunts sont initialisés de façon à ce que le dernier emprunt saisis soit visible dans l'ordre suivant :
+                  <li>Les Emprunts ayants la date de retour Prévue expirée : <strong>En rouge</strong></li>
+                  <li>Les Emprunts ayants la date de retour Prévue qui n'est pas encore expirée : <strong>En Vert</strong></li>
+                  <li>Les Emprunts Rendus : <strong>En Bleu</strong></li>
               </p>
           </div>
       </div>
 <div class="col-md-10 col-sm-6">
-  <h2 class="text-center">Tous les Emprunt</h2>
+  <h2 class="text-center">Tous les Emprunts</h2>
     <hr>
-    <a class="btn btn-success" href="<?= $this->url('emprunt_create')?>">Ajouter un emprunts</a><br>
+    <a class="btn btn-success" href="<?= $this->url('emprunt_create')?>">Ajouter un emprunt</a><br>
   <div class="row" style="margin-top: 15px;">
     <div class="col-lg-12">
       <div class="panel panel-default">
-        <div class="panel-heading">Tableau de gestion des Emprunt 
+        <div class="panel-heading">Tableau de gestion des Emprunts 
         </div>
 <!-- /.panel-heading -->
 <div class="panel-body">
@@ -63,13 +63,13 @@
               <th>Ecole / Promo </th>
               <th>Date & heure d'emprunt</th>
               <th>Matériel Emprunter</th>
-              <th>Quantité Emprunter</th>
+              <th>Quantiter Empruntée</th>
               <th>Etat du matériel </th>
-              <th>Date prévu de retour</th>
+              <th>Date prévue de retour</th>
               <th>Date de Retour</th>
               <th>Etat de L'emprunt</th>
               <th>Action</th>    
-              <th>Modifications</th>
+              <th>Modification</th>
             </tr>
           </thead>
 

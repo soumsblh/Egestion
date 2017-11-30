@@ -24,11 +24,11 @@
         </div>
         <hr>
         <div class="list-group">
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item active">  Exporté Votre Base</a> 
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-success active">  Importé Votre Base</a>                    
+        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item active">  Exporter Votre Base</a> 
+        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-success active">  Importer Votre Base</a>                    
         </div>
         <div class="list-group">
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-danger active ">Deconnexion</a>                  
+        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-danger active ">Déconnexion</a>                  
         </div>
 
       </div>
@@ -40,7 +40,7 @@
           <thead class="table-dark">
             <tr>
               <th>Numéros Matériel</th>
-              <th>Type de matériel / Marque / Modèle </th>
+              <th>Type de Matériel / Marque / Modèle </th>
               <th>Etat du Matériel</th>
               <th>Quantité en Stock</th>
               <th>Modification</th>

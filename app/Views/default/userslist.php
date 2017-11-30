@@ -45,7 +45,7 @@
               <th>Ecole</th>
               <th>Email</th>
               <th>Role</th>
-              <th>Modifications</th>
+              <th>Modification</th>
             </tr>
           </thead>  <?php foreach ($user_list as $list) : ?>
           <tbody>

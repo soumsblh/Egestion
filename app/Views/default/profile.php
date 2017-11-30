@@ -17,16 +17,16 @@
     <br>
     <div class="well">
       <h4>Information sur les Emprunts</h4>
-        <p>Tous les emprunt sont initilisé de façon a ce que le dernier emprunt saisie sont visible, les emprunts munis d'un button <strong>RENDRE</strong> sont : en Cours de pret ou en Retard, pour les rendre cliquer seulement sur le button. Les autres emprunt ne peuvent  être modifier, se référer a votre Administrateur.<br> L'ordre de tri sera le suivant :
-          <li>Les Emprunts ayant la date de retour Prévu expiré : <strong>En rouge</strong></li>
-          <li>Les Emprunts ayant la date de retour Prévu qui n'est pas encore expiré : <strong>En Vert</strong></li>
-          <li>Les Emprunts Rendu : <strong>En Blue</strong></li>
+        <p>Tous les emprunt sont initialisés de façon à ce que le dernier emprunt saisis soit visible, les emprunts munis d'un bouton <strong>RENDRE</strong> sont : en Cours de prêt ou en Retard, pour les rendre cliquer seulement sur le bouton. Les autres emprunts ne peuvent  être modifié, se référer a votre Administrateur.<br> L'ordre de tri sera le suivant :
+          <li>Les Emprunts ayants la date de retour Prévue expirée : <strong>En rouge</strong></li>
+          <li>Les Emprunts ayants la date de retour Prévue qui n'est pas encore expirée : <strong>En Vert</strong></li>
+          <li>Les Emprunts Rendus : <strong>En Bleu</strong></li>
         </p>
     </div> 
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-        Tableau de gestion des Emprunt
+        Tableau de gestion des Emprunts
          </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -46,10 +46,10 @@
               <th>Nom/Prénom</th>
               <th>Ecole / Promo </th>
               <th>Date & heure d'emprunt</th>
-              <th>Matériel Emprunter</th>
-              <th>Quantité Emprunter</th>
+              <th>Matériel Emprunté</th>
+              <th>Quantité Empruntée</th>
               <th>Etat du matériel </th>
-              <th>Date prévu de retour</th>
+              <th>Date prévue de retour</th>
               <th>Date de Retour</th>
               <th>Etat de L'emprunt</th>
               <th>Action</th>    
