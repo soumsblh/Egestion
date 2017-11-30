@@ -1,18 +1,9 @@
 <?php $this->layout('layout', ['title' => 'Changer mes informations']) ?>
 
 <?php $this->start('main_content') ?>
-  <div id="changeInfos">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="list-group profile_panel">
-            <a href="<?= $this->url('default_profile'); ?>" class="list-group-item">Tous Les Emprunts </a>
-            <a href="<?= $this->url('security_changeInfos'); ?>" class="list-group-item">Changer mes informations</a>
-            <a href="<?= $this->url('security_logout'); ?>" class="list-group-item">Déconnexion</a>
-          </div>
-        </div>
-
-      <div class="col-md-3 col-md-push-1">
+<body class="align" id="homeco">
+    <div >
+      <div class="col-md-6 col-md-push-3" id="login">
         <h3 class="text-center">Changer mon adresse email</h3>
         <div class="form-group">
           <label for="">Adresse email actuelle :</label>
@@ -38,10 +29,14 @@
             <input id="cfpassword" name="cfpassword" type="password" class="form-control" placeholder="Mot de passe">
           </div>
           <button class="btn btn-success center-block" type="submit" name="button-password">Changer mon mot de passe</button>
+              <?php if ($w_user['role'] === 'admin') : ?>
+                    <a  href="<?= $this->url('default_profile_admin') ?>" class="btn btn-default">Annuler</a>
+                <?php elseif ($w_user['role'] === 'user') :?>
+                    <a  href="<?= $this->url('default_profile') ?>" class="btn btn-default">Annuler</a>
+                <?php endif ;?>
         </form>
       </div>
-    </div><!-- .row -->
   </div><!-- .container-fluid -->
-</div><!-- #changeInfos -->
+</body>
 
 <?php $this->stop('main_content') ?>

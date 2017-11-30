@@ -5,6 +5,7 @@ namespace Controller;
 use Model\UserModel;
 use Model\EmpruntModel;
 use Model\EquipementModel;
+use Model\EmprunteurModel;
 use \W\Controller\Controller;
 
 class DefaultController extends Controller
@@ -16,7 +17,7 @@ class DefaultController extends Controller
 	public function home()
 	{
 		$user_manager  = new UserModel();
-		$event_manager = new EmpruntModel();
+		$event_manager = new EmprunteurModel();
 		$logo     = $user_manager->getLogoByUser('id_Ecole');
 
 		$this->show('default/home' ,['logo' => $logo]);
@@ -33,7 +34,8 @@ class DefaultController extends Controller
 
 
 		$equipement_manager 	= new EquipementModel();
-		$event_manager 	= new EmpruntModel();
+		$emprunteur_manager 	= new EmprunteurModel();
+        $event_manager 	= new EmpruntModel();
 		$user_manager		= new UserModel();
 		$user = $user_manager->find($this->getUser()['id']);
 		$events       	= $event_manager->findAll();
@@ -44,7 +46,7 @@ class DefaultController extends Controller
 		$count_users 		= $user_manager->countUsers();  
 		$user_list 		= $user_manager->UsersList();
 		$count_list 		= $equipement_manager->countNbrEquipement();
-		$count_emprunteur 	= $event_manager->countEmprunteur();
+		$count_emprunteur 	= $emprunteur_manager->countEmprunteur();
 
 		foreach ($emprunt as $event) {
 
@@ -72,7 +74,8 @@ class DefaultController extends Controller
 		//si l'utilisateur n'a pas d'evenement on lui indiquera le chemin à suivre pour en créer un
 		$this->allowTo(['user','admin']);
 		
-		$equipement_manager 	= new EquipementModel();
+		$emprunteur_manager 	= new EmprunteurModel();
+        $equipement_manager 	= new EquipementModel();
 		$event_manager 	= new EmpruntModel();
 		$user_manager		= new UserModel();
 		$user = $user_manager->find($this->getUser()['id']);
@@ -84,7 +87,7 @@ class DefaultController extends Controller
 		$count_users 		= $user_manager->countUsers();  
 		$user_list 		= $user_manager->UsersList();
 		$count_list 		= $equipement_manager->countNbrEquipement();
-		$count_emprunteur 	= $event_manager->countEmprunteur();
+		$count_emprunteur 	= $emprunteur_manager->countEmprunteur();
 
 
 		foreach ($emprunt as $event) {
@@ -119,9 +122,10 @@ class DefaultController extends Controller
 	public function userslist()
 	{
 
-		//redirection a une page d'erreur si on on n'est pas admin
-		$this->allowTo(['admin','user']);
+		//redirection a une page d'erreur si on on n'est pas admin ou user
+		$this->allowTo(['admin']);
 
+        $emprunteur_manager 	= new EmprunteurModel();
 		$equipement_manager 	= new EquipementModel();
 		$user_manager = new UserModel();
 		$event_manager 	= new EmpruntModel();
@@ -133,7 +137,7 @@ class DefaultController extends Controller
 		$count_users 	= $user_manager->countUsers();
 		$user_list 		= $user_manager->UsersList();
 		$count_list 		= $equipement_manager->countNbrEquipement();
-		$count_emprunteur 	= $event_manager->countEmprunteur();
+		$count_emprunteur 	= $emprunteur_manager->countEmprunteur();
 		// Traitement du formulaire pour changer l'email; $_POST['button-email'] vient du name dans l'HTML pour différencier les deux formulaires
 		foreach ($users as $user) {
 
@@ -178,7 +182,7 @@ class DefaultController extends Controller
 				}
 			}else
 			{
-				echo "<div class='alert-info'>Votre Email ou Mots de Passe sont incorrect</div>";
+				echo "<div class='alert-danger'>Votre Email ou Mot de Passe est incorrect</div>";
 			}
 
 		}

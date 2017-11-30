@@ -46,7 +46,6 @@
     $sql = ('SELECT logo FROM users, ecole WHERE ecole.Id_Ecole = users.Id_Ecole');
     $sth = $this->dbh->prepare($sql);
     $sth->execute();
-
     return $sth->fetchAll();
   }
 

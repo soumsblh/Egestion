@@ -25,7 +25,7 @@ class EquipementModel extends Model
     }
            public function listMat()
     {
-      $query = $this->dbh->query('SELECT DISTINCT * FROM `type`,marque,materiels WHERE type.id_type=marque.id_marque AND materiels.id_Materiels= type.id_type');
+      $query = $this->dbh->query('SELECT DISTINCT * FROM `type`,marque,materiels,etat WHERE materiels.id_type=type.id_type AND materiels.id_marque= marque.id_marque AND materiels.id_Etat= etat.id_Etat');
       return $query->fetchAll();
     }
 
@@ -36,7 +36,7 @@ class EquipementModel extends Model
     }
     public function countNbrEquipement()
     {
-      $query = $this->dbh->query('SELECT COUNT(*) as list FROM `materiels`, marque, type,etat WHERE materiels.id_Materiels = type.id_type AND etat.id_Etat= materiels.id_Materiels AND  marque.id_marque= materiels.id_Materiels');
+      $query = $this->dbh->query('SELECT COUNT(*) as list FROM `materiels`, type,etat,marque WHERE materiels.id_type = type.id_type AND materiels.id_Etat = etat.id_Etat AND materiels.id_marque = marque.id_marque');
       return $query->fetch();
     }
 

@@ -15,10 +15,10 @@
               <a href="<?= $this->url('default_userslist'); ?>" class="list-group-item"><i class="fa fa-user-circle" aria-hidden="true"></i> Utilisateurs <span class="badge"><?= $count_users['users']; ?></span></a>
             </li>
             <li>
-              <a href="<?= $this->url('default_equipement'); ?>" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Materiels <span class="badge"><?= $count_list['list']; ?></span></a>
+              <a href="<?= $this->url('equipement_equipement'); ?>" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Matériels <span class="badge"><?= $count_list['list']; ?></span></a>
             </li>
               <li>
-              <a href="<?= $this->url('default_emprunteur'); ?>" class="list-group-item"><i class="fa fa-users" aria-hidden="true"></i> Emprunteurs <span class="badge"><?= $count_emprunteur['emprunteur']; ?></span></a>
+              <a href="<?= $this->url('emprunteur_emprunteur'); ?>" class="list-group-item"><i class="fa fa-users" aria-hidden="true"></i> Emprunteurs <span class="badge"><?= $count_emprunteur['emprunteur']; ?></span></a>
             </li>
           </ul>
         </div>
@@ -33,14 +33,14 @@
 
       </div>
       <div class="col-md-10 col-sm-9">
-        <h2 class="text-center">Matériaux</h2>
+        <h2 class="text-center">Emprunteurs</h2>
         <hr>
-         <a class="btn btn-success"  href="<?php echo $this->url('security_register'); ?>">Ajouter un Matériel </a>
-        <table class="table table-dark">
-          <thead>
+         <a class="btn btn-success"  href="<?php echo $this->url('emprunteur_NewEmprunteur'); ?>">Ajouter un Emprunteur </a>
+        <table class="table table-responsive-sm" style="margin-top:15px;">
+          <thead class="thead-dark">
             <tr>
               <th>Nom</th>
-              <th>Prenom</th>
+              <th>Prénom</th>
               <th>Ecole</th>
               <th>Promo</th>
               <th>Années</th>
@@ -56,8 +56,7 @@
               <td><?= $list['Promo']; ?></td>
               <td><?= $list['AnneePromotion']; ?></td>
             <td>
-                <a href="<?= $this->url('emprunt_update' , ['id' => $event['id_Materiels'] ] )?>"><i class="fa fa-scissors" aria-hidden="true"></i> Modifier</a>
-                <a href="<?= $this->url('emprunt_view'   , ['id' => $event['id_Materiels'] ] )?>"><i class="fa fa-book" aria-hidden="true"></i> Lire</a>
+                <a href="<?= $this->url('emprunt_update' , ['id' => $list['id_Emprunteur'] ] )?>"><i class="fa fa-scissors" aria-hidden="true"></i> Modifier</a>
             </td> 
             </tr>      
           </tbody>  

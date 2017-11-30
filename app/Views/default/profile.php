@@ -4,64 +4,59 @@
   <div id="profileAdmin">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2 col-sm-3 panel-admin">
-        <h3 class="text-center">Bonjour <?php echo $w_user['firstname']; ?></h3 >
-        <div class="list-group">
-          <ul class="list-unstyled" id="admin">
-            <li>
-              <a href="<?= $this->url('default_profile_admin'); ?> " class="list-group-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Emprunts <span class="badge"><?= $count_events['emprunt']; ?></span></a>
-            </li>
-            <li>
-              <a href="<?= $this->url('default_userslist'); ?>" class="list-group-item"><i class="fa fa-user-circle" aria-hidden="true"></i> Utilisateurs <span class="badge"><?= $count_users['users']; ?></span></a>
-            </li>
-            <li>
-              <a href="<?= $this->url('emprunt_equipement'); ?>" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Materiels <span class="badge"><?= $count_list['list']; ?></span></a>
-            </li>
-             <li>
-              <a href="<?= $this->url('emprunt_emprunteur'); ?>" class="list-group-item"><i class="fa fa-users" aria-hidden="true"></i> Emprunteurs <span class="badge"><?= $count_emprunteur['emprunteur']; ?></span></a>
-            </li>
-          </ul>
+         <h2 class="text-center">Bienvenus Sur E-GESTION </title> </h2>
+            <h3 class="text-center">Bonjour <?php echo $w_user['lastname']." ".$w_user['firstname']; ?> !</h3>
+            <hr>
+        <ul class="nav nav-pills nav-justified col-sm-3 col-md-9">
+            <li role="presentation" ><a href="<?= $this->url('emprunt_createbyUser')?>"><i class="fa fa-plus-circle"></i> Emprunt</a></li>
+            <li role="presentation"><a href="<?= $this->url('emprunteur_NewEmprunteur')?>"><i class="fa fa-plus-circle"></i> Emprunteur</a></li>
+            <li role="presentation" class="bg-info"><a href="<?= $this->url('security_changeInfos'); ?>" class="fa fa-user-circle"> Mes informations</a></li>
+            <li role="presentation" class="bg-danger"><a href="<?= $this->url('security_logout')?>"><i class="fa fa-sign-out"></i> Déconection</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="well">
+      <h4>Information sur les Emprunts</h4>
+        <p>Tous les emprunt sont initilisé de façon a ce que le dernier emprunt saisie sont visible, les emprunts munis d'un button <strong>RENDRE</strong> sont : en Cours de pret ou en Retard, pour les rendre cliquer seulement sur le button. Les autres emprunt ne peuvent  être modifier, se référer a votre Administrateur.<br> L'ordre de tri sera le suivant :
+          <li>Les Emprunts ayant la date de retour Prévu expiré : <strong>En rouge</strong></li>
+          <li>Les Emprunts ayant la date de retour Prévu qui n'est pas encore expiré : <strong>En Vert</strong></li>
+          <li>Les Emprunts Rendu : <strong>En Blue</strong></li>
+        </p>
+    </div> 
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+        Tableau de gestion des Emprunt
+         </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+            <div class="row">
+                <div class="col-sm-6">
+                <div class="dataTables_length" id="dataTables-example_length">
+            </div>
         </div>
-        <hr>
-        <div class="list-group">
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item active">  Exporté Votre Base</a> 
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-success active">  Importé Votre Base</a>                    
-        </div>
-        <div class="list-group">
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-danger active ">Deconnexion</a>                  
-        </div>
-
-      </div>
-      <div class="col-md-10 col-sm-9">
-        <h2 class="text-center">Toutes les emprunts</h2>
-        <hr>
-        <a class="btn btn-success" href="<?= $this->url('emprunt_create')?>">Ajouter un emprunts</a><br>
-<!--         <?php echo($event['DatePrevRetour']."  ".date("Y-m-d")) ;if( $event['DatePrevRetour'] < date("Y-m-d") ) : ?>
-          <div class="alert alert-danger" role="alert">
-         <?php foreach ($emprunt as $event) : ?>
-          <?= $event['Nom']." ".$event['Prenom'];?>
-        <?php endforeach; ?>
-        </div>
-          <?php  endif; ?> -->
-        <table class="table table-dark">
-          <thead>
+    </div>
+    <div class="row">
+    <div class="col-sm-12">
+        <table class="table">
+          <thead class="table-light">
             <tr>
               <th>Numeros D'Emprunt</th>
-              <th>Nom/Prenom</th>
+              <th>Nom/Prénom</th>
               <th>Ecole / Promo </th>
               <th>Date & heure d'emprunt</th>
-              <th>Materiel Emprunter</th>
+              <th>Matériel Emprunter</th>
               <th>Quantité Emprunter</th>
-              <th>Etat du materiel </th>
+              <th>Etat du matériel </th>
               <th>Date prévu de retour</th>
               <th>Date de Retour</th>
               <th>Etat de L'emprunt</th>
               <th>Action</th>    
-              <th>Modifications</th>
             </tr>
           </thead>
             <?php foreach ($emprunt as $event) : ?>
-            <tbody>
+             <tbody class="table-striped">
                 <?php if ($event['DatePrevRetour'] > date("Y-m-d") && (!isset($event['DateRetour']))) :?>
               <tr class="success"> 
                 <?php  elseif ( ($event['EtatEmprunt'] == 1) && (isset($event['DateRetour']))) : ?>
@@ -91,10 +86,7 @@
                     <button type="submit" class="btn btn-primary btn-lg" name="button-<?= $event['id_Emprunt']; ?>"> RENDRE </button>
                     </form>
                    <?php endif;?> 
-                </td>
-                <td>
-                  <a href="<?= $this->url('emprunt_update' , ['id' => $event['id_Emprunt'] ] )?>"><i class="fa fa-scissors" aria-hidden="true"></i> Modifier</a>
-                </td>           
+                </td>        
             </tr>
           </tbody>      
         <?php endforeach; ?>

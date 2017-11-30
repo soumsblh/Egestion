@@ -10,8 +10,11 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/bootstrap.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/font-awesome.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
-	<!-- FAVICON -->
+
+    <!-- FAVICON -->
 
 	<link rel="icon" type="img/ico" href="<?= $this->assetUrl('img/favicon.ico') ?>" />
 	<link rel="icon" type="img/ico" href="<?= $this->assetUrl('img/favicon.ico') ?>" />
@@ -51,7 +54,9 @@
 		    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js" charset="utf-8"> </script>
 		    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" charset="utf-8"> </script>
 		    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js" charset="utf-8"> </script>
-			<script src="<?= $this->assetUrl('js/main.js') ?>" charset="utf-8"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+            <script src="<?= $this->assetUrl('js/main.js') ?>" charset="utf-8"></script>
 			<?= $this->section('javascript') ?>
 		</footer>
 </html>

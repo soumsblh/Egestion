@@ -4,6 +4,7 @@ namespace Controller;
 
 use Model\UserModel;
 use Model\MessagesModel;
+use Model\EmprunteurModel;
 use  Model\EmpruntModel;
 use \W\Controller\Controller;
 
@@ -85,7 +86,8 @@ class SecurityController extends Controller
 
                 $message = $errors;
             }
-              $this->redirectToRoute('default_userslist');      
+
+              $this->redirectToRoute('default_userslist');
           }
         $this->show('security/register' , ['message' => $message ,'firstname'=>$firstname,'lastname' => $lastname,'username' => $username , 'email' => $email,'Id_Ecole' => $Id_Ecole  ]);
     }
@@ -110,8 +112,6 @@ class SecurityController extends Controller
                 $this->redirectToRoute('default_frontPage');
             }
         }
-
-
     
     // J'injecte la variable messages dans ma vue
     $this->show('default/frontPage', ['messages' => $messages]);
@@ -126,6 +126,12 @@ class SecurityController extends Controller
         $auth_manager->logUserOut(); // Déconnecte l'utilisateur connecté
         $this->redirectToRoute('default_frontPage');
     }
+
+      public function DeleteCacheSession()
+  {
+        $auth_manager = new \W\Security\AuthentificationModel();
+        $auth_manager->logUserOut(); // Déconnecte l'utilisateur connecté
+  }
 
     /**
     * Permet la connexion d'un utilisateur
@@ -158,12 +164,9 @@ class SecurityController extends Controller
           <a href='http://localhost/Egestion/public/forget?token=".$token_forget."'
           >http://localhost/Egestion/public/forget?token=".$token_forget."</a>";
 
-          // echo "Voici le lien vous permettant de redéfinir votre mot de passe :
-          // <a href='http://localhost/Labonnesortie/public/forget?token=".$token_forget."'
-          // >http://localhost/Labonnesortie/public/forget?token=".$token_forget."</a>";
 
           } else {
-            echo 'L\'email n\'existe pas';
+            echo "<div class='alert-danger'>Votre Email est incorrect</div>";
           }
         }
 
@@ -270,16 +273,7 @@ class SecurityController extends Controller
 
   }
 
-  public function DeleteCacheSession()
-  {
-    /* $auth_manager = new \W\Security\AuthentificationModel();
-        $auth_manager->logUserOut(); // Déconnecte l'utilisateur connecté
-        $this->redirectToRoute('default_frontPage');
-    if () {
-      # code...
-    }
-*/
-  }
+
 
 
 } //class SecurityController
