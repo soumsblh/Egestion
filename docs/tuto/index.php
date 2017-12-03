@@ -14,7 +14,7 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>W :: Documentation</title>
+	<title>E-GESTION FRAMEWORK W :: Documentation</title>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,700">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -24,7 +24,7 @@
 <body class="<?= $p ?>">
 	<div class="container">
 		<div class="row">
-			<header class="col-xs-12"><h1>W :: Documentation</h1></header>
+			<header class="col-xs-12"><h1>E-GESTION FRAMEWORK W  :: Documentation</h1></header>
 		</div>
 		<div class="row">
 			<aside id="sidebar" class="col-xs-12 col-lg-2">

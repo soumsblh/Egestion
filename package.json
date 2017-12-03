@@ -1,0 +1,26 @@
+{
+  "name": "egestion",
+  "version": "1.0.0",
+  "description": "Egestion Npm",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boulouh/EPSI_Gestion.git"
+  },
+  "author": "Mustapha Boulouh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boulouh/EPSI_Gestion/issues"
+  },
+  "homepage": "https://github.com/boulouh/EPSI_Gestion#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1"
+  }
+}

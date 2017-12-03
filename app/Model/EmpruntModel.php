@@ -10,11 +10,6 @@ class EmpruntModel extends Model
   protected $primaryKey = 'id_Emprunt';
   
 
-    public function setPrimaryKey($primaryKey)
-    {
-      $this->primaryKey = $primaryKey;
-      return $this;
-    }
     public function countEvents()
     {
       $query = $this->dbh->query('SELECT COUNT(*) as emprunt  FROM emprunt ');
@@ -25,25 +20,8 @@ class EmpruntModel extends Model
       $query = $this->dbh->query('SELECT COUNT(*) as emprunts FROM emprunt Where emprunt.id_Emprunt=' . $id);
       return $query->fetch();
     }
-           public function listemprunteur()
-    {
-      $query = $this->dbh->query('SELECT * FROM `emprunteur`,ecole, promotion WHERE id_Emprunteur = promotion.id AND ecole.Id_Ecole = promotion.Id_Ecole');
-      return $query->fetchAll();
-    }
-
-       public function countEmprunteur()
-    {
-      $query = $this->dbh->query('SELECT COUNT(*) as emprunteur FROM `emprunteur`');
-      return $query->fetch();
-    }
-      
-     public function AllEmprunteur()
-  {
-    $query = $this->dbh->query('SELECT * FROM `emprunteur`,ecole,etat,emprunt WHERE emprunteur.id_Emprunteur = ecole.Id_Ecole AND emprunteur.id_Emprunteur = emprunt.id_Emprunt AND emprunt.id_Emprunt =etat.id_Etat');
-    return $query->fetchAll();
-  }
   public function countAllEvent(){
-    $query = $this->dbh->query('SELECT * FROM `emprunt`, `emprunteur`, `materiels`,`etat`,`promotion`, `type`,ecole WHERE emprunt.id_Emprunteur=emprunteur.id_Emprunteur AND emprunt.id_Materiels=materiels.id_Materiels AND etat.id_Etat=materiels.id_Etat AND emprunt.id_Emprunteur=promotion.id AND materiels.id_Materiels=type.id_type AND promotion.Id_Ecole = ecole.Id_Ecole GROUP BY id_emprunt ORDER BY `emprunt`.`DateRetour` ASC');
+    $query = $this->dbh->query('SELECT * FROM `emprunt`, `emprunteur`, `materiels`,`etat`,`promotion`, `type`,ecole,marque WHERE emprunt.id_Emprunteur=emprunteur.id_Emprunteur AND emprunt.id_Materiels=materiels.id_Materiels AND etat.id_Etat=materiels.id_Etat AND emprunteur.id=promotion.id AND materiels.id_type=type.id_type AND promotion.Id_Ecole = ecole.Id_Ecole AND materiels.id_marque = marque.id_marque GROUP BY id_emprunt ORDER BY `emprunt`.`DateEmprunt` DESC');
     return $query->fetchAll();
   }
       public function eventsPagination($orderBy = '', $orderDir = 'DESC', $limit = null, $offset = null)

@@ -15,65 +15,69 @@
               <a href="<?= $this->url('default_userslist'); ?>" class="list-group-item"><i class="fa fa-user-circle" aria-hidden="true"></i> Utilisateurs <span class="badge"><?= $count_users['users']; ?></span></a>
             </li>
             <li>
-              <a href="<?= $this->url('equipement_equipement'); ?>" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Materiels <span class="badge"><?= $count_list['list']; ?></span></a>
+              <a href="<?= $this->url('equipement_equipement'); ?>" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Matériels <span class="badge"><?= $count_list['list']; ?></span></a>
             </li>
              <li>
-              <a href="<?= $this->url('emprunt_emprunteur'); ?>" class="list-group-item"><i class="fa fa-users" aria-hidden="true"></i> Emprunteurs <span class="badge"><?= $count_emprunteur['emprunteur']; ?></span></a>
+              <a href="<?= $this->url('emprunteur_emprunteur'); ?>" class="list-group-item"><i class="fa fa-users" aria-hidden="true"></i> Emprunteurs <span class="badge"><?= $count_emprunteur['emprunteur']; ?></span></a>
             </li>
           </ul>
         </div>
         <hr>
         <div class="list-group">
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item active">  Exporté Votre Base</a> 
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-success active">  Importé Votre Base</a>                    
+            <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item active"><i class="fa fa-database">  Exporter Votre Base</i></a>
+            <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-success active"><i class="fa fa-database"> Importer Votre Base</i></a>
         </div>
         <div class="list-group">
-        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-danger active ">Deconnexion</a>                  
+        <a href="<?= $this->url('security_changeInfos'); ?>" class="list-group-item list-group-item active "><i class="fa fa-user-circle"> Mes informations</i></a>
+        <a href="<?= $this->url('security_logout'); ?>" class="list-group-item list-group-item-danger active "><i class="fa fa-sign-out"> Deconnexion</i></a>
         </div>
-
-      </div>
-      <div class="col-md-10 col-sm-6">
-        <h2 class="text-center">Toutes les emprunts</h2>
-        <hr>
-        <a class="btn btn-success" href="<?= $this->url('emprunt_create')?>">Ajouter un emprunts</a><br>
-      <div class="row" style="margin-top: 15px;">
-      <div class="col-lg-12">
-        <div class="panel panel-default">
-        <div class="panel-heading">
-          Tableau de gestion des Emprunt 
+          <div class="well">
+              <h4>Information sur les Emprunts</h4>
+              <p>Tous les emprunts sont initialisés de façon à ce que le dernier emprunt saisis soit visible dans l'ordre suivant :
+                  <li>Les Emprunts ayants la date de retour Prévue expirée : <strong>En rouge</strong></li>
+                  <li>Les Emprunts ayants la date de retour Prévue qui n'est pas encore expirée : <strong>En Vert</strong></li>
+                  <li>Les Emprunts Rendus : <strong>En Bleu</strong></li>
+              </p>
           </div>
-          <!-- /.panel-heading -->
-          <div class="panel-body">
-          <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="dataTables_length" id="dataTables-example_length">
-                 </div>
-               </div>
-             </div>
-             <div class="row">
-              <div class="col-sm-12">
-        <table class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+      </div>
+<div class="col-md-10 col-sm-6">
+  <h2 class="text-center">Tous les Emprunts</h2>
+    <hr>
+    <a class="btn btn-success" href="<?= $this->url('emprunt_create')?>">Ajouter un emprunt</a><br>
+  <div class="row" style="margin-top: 15px;">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Tableau de gestion des Emprunts 
+        </div>
+<!-- /.panel-heading -->
+<div class="panel-body">
+<div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="tab-content">
+        <table class="table-bordered">
           <thead class="table-light">
             <tr>
               <th>Numeros D'Emprunt</th>
-              <th>Nom/Prenom</th>
+              <th>Nom/Prénom</th>
               <th>Ecole / Promo </th>
               <th>Date & heure d'emprunt</th>
-              <th>Materiel Emprunter</th>
-              <th>Quantité Emprunter</th>
-              <th>Etat du materiel </th>
-              <th>Date prévu de retour</th>
+              <th>Matériel Emprunter</th>
+              <th>Quantiter Empruntée</th>
+              <th>Etat du matériel </th>
+              <th>Date prévue de retour</th>
               <th>Date de Retour</th>
               <th>Etat de L'emprunt</th>
               <th>Action</th>    
-              <th>Modifications</th>
+              <th>Modification</th>
             </tr>
           </thead>
+
+
             <?php foreach ($emprunt as $event) : ?>
             <tbody class="table-striped">
                 <?php if ($event['DatePrevRetour'] > date("Y-m-d") && (empty($event['DateRetour']))) :?>
-              <tr class="bg-warning"> 
+              <tr class="bg-success">
                 <?php  elseif ( ($event['EtatEmprunt'] == 1) && (isset($event['DateRetour']))) : ?>
               <tr class="bg-info">
                 <?php  else : ?>
@@ -87,7 +91,7 @@
                   $intl = new IntlDateFormatter('fr_FR',IntlDateFormatter::FULL,IntlDateFormatter::NONE);
                   echo $intl->format($datetime);?>
                 </td>
-                <td><?php echo $event['TypeMateriel']."<br>".$event['ModelMateriel'];    ?></td>
+                <td><?php echo $event['TypeMateriel']." ".$event['ModelMateriel']." ".$event['nom_marque'];    ?></td>
                 <td><?php echo $event['QuantiteEmprunter'];    ?></td>
                 <td><?php echo $event['Libelle'];?></td>
                 <td><?php $datetime = new DateTime($event['DatePrevRetour']);
@@ -108,7 +112,7 @@
                       <select class="form-control" name="EtatEmprunt" style="display: none;">
                         <option class="" value="1">Retour</option>
                       </select>
-                    <button type="submit" class="btn btn-primary btn-lg" name="button-<?= $event['id_Emprunt']; ?>"> RENDRE </button>
+                    <button type="submit" class="btn btn-primary btn-xs" style="font-size:9px; " name="button-<?= $event['id_Emprunt']; ?>"> Rendre </button>
                     </form>
                    <?php endif;?> 
                 </td>
@@ -116,19 +120,9 @@
                   <a href="<?= $this->url('emprunt_update' , ['id' => $event['id_Emprunt'] ] )?>"><i class="fa fa-scissors" aria-hidden="true"></i> Modifier</a>
                 </td>           
             </tr>
-          </tbody>      
+          </tbody>
         <?php endforeach; ?>
         </table>
-              <div class="well">
-                  <h4>Information sur les Emprunts</h4>
-                    <p>Tous les emprunt sont initilisé de façon a ce que le dernier emprunt saisie sont visible l'ordre sera le suivant : 
-                    <ul>
-                      <li>Les Emprunts ayant la date de retour Prévu expiré : <strong>En rouge</strong></li>
-                      <li>Les Emprunts ayant la date de retour Prévu qui n'est pas encore expiré : <strong>En Vert</strong></li>
-                      <li>Les Emprunts Rendu : <strong>En Blue</strong></li>        
-                    </ul>
-                  </p>
-              </div>
         </div> <!-- .container-fluid -->
         </div>  <!-- #profileAdmin -->
 <?php $this->stop('main_content'); ?>

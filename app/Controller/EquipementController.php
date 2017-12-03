@@ -4,6 +4,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use  Model\EquipementModel;
 use  Model\EmpruntModel;
+use Model\EmprunteurModel;
 use  Model\UserModel;
 use  Model\SubscribersModel;
 
@@ -19,7 +20,8 @@ class EquipementController extends Controller
         //redirection a une page d'erreur si on on n'est pas admin
         $this->allowTo('admin');
 
-        $equipement_manager = new EquipementModel();  
+        $emprunteur_manager = new EmprunteurModel();
+        $equipement_manager = new EquipementModel();
         $user_manager = new UserModel();
         $event_manager  = new EmpruntModel();
         $user = $user_manager->find($this->getUser()['id']);
@@ -32,7 +34,7 @@ class EquipementController extends Controller
         $user_list    = $user_manager->UsersList();
         $listEquip = $equipement_manager->countEquipement();
         $count_list   = $equipement_manager->countNbrEquipement();
-        $count_emprunteur   = $event_manager->countEmprunteur();
+        $count_emprunteur   = $emprunteur_manager->countEmprunteur();
 
 
         $this->show('equipement/equipement' , [ 'user' => $user , 'users' => $users, 'count_events' => $count_events, 'count_users' => $count_users,'user_list' => $user_list, 'count_list' => $count_list,'listEquip' => $listEquip,'count_emprunteur' => $count_emprunteur]);
@@ -74,9 +76,6 @@ class EquipementController extends Controller
                      'id_Etat'            => '1',
                      'id_marque'         => $id_marque,
                   ], $id_Materiels = true);
-
-
-
 
                 $this->redirectToRoute('default_profile_admin');
             }
