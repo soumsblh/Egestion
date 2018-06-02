@@ -17,7 +17,16 @@ class DefaultController extends Controller
 	public function home()
 	{
 		$user_manager  = new UserModel();
-		$event_manager = new EmprunteurModel();
+        $users = $user_manager->findAll();
+        $countUsers = $user_manager->countUsers();
+
+        if ($countUsers[users] == 0)
+        {
+            $this->redirectToRoute('security_register');
+        }elseif( $users['Id_Ecole'] == null)
+        {
+            $this->redirectToRoute('default_frontPage');
+        };
 		$logo     = $user_manager->getLogoByUser('id_Ecole');
 
 		$this->show('default/home' ,['logo' => $logo]);
