@@ -87,21 +87,15 @@
                 <td><?php echo $event['id_Emprunt'];?></td>
                 <td><?php echo $event['Nom']." ".$event['Prenom'];?></td>
                 <td><?php echo $event['NomEcole']."/".$event['Promo']?></td>
-                <td><?php $datetime = new DateTime($event['DateEmprunt']);
-                  $intl = new IntlDateFormatter('fr_FR',IntlDateFormatter::FULL,IntlDateFormatter::NONE);
-                  echo $intl->format($datetime);?>
+                <td><?= $event['DateEmprunt'];?>
                 </td>
                 <td><?php echo $event['TypeMateriel']." ".$event['ModelMateriel']." ".$event['nom_marque'];    ?></td>
                 <td><?php echo $event['QuantiteEmprunter'];    ?></td>
                 <td><?php echo $event['Libelle'];?></td>
-                <td><?php $datetime = new DateTime($event['DatePrevRetour']);
-                  $intl = new IntlDateFormatter('fr_FR',IntlDateFormatter::FULL,IntlDateFormatter::NONE);
-                  echo $intl->format($datetime);?>
+                <td><?= $event['DatePrevRetour'];?>
                 </td>
                   <?php if(isset($event['DateRetour'])) :?>
-                <td><?php $datetime = new DateTime($event['DateRetour']);
-                  $intl = new IntlDateFormatter('fr_FR',IntlDateFormatter::FULL,IntlDateFormatter::NONE);
-                  echo $intl->format($datetime);?></td>
+                <td><?= $event['DateRetour'];?></td>
                 <?php else : ?>
                   <td></td>
                 <?php endif ; ?>
