@@ -18,7 +18,8 @@
           <?php  endif; ?> <!-- $w_user['role'] -->
         <?php  endif; ?><!-- if($w_user) --> 
       </button>
-         <li><a href="<?php echo $this->url('security_forget'); ?>">Mot de passe oublié</a></li>          
+        <a href="<?php echo $this->url('security_forget'); ?>">Mot de passe oublié</a></br>
+        <a href="<?php echo $this->url('security_register'); ?>">Pas de compte ? </a>
     </form>
 </div>
 </body>

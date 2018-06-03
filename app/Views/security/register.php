@@ -2,10 +2,13 @@
 
 <?php $this->start('main_content') ?>
 <body class="align" id="homeco">
+<div>
+    <div style="margin-top: 200px"></div>
+</div>
 <div id="login">
   <div class="container register">
     <div class="row">
-      <form class="col-md-4 col-md-push-4" method="POST">
+      <form class="col-md-5 col-md-push-4" method="POST">
         <h2>Ajouter un Utilisateur :</h2>
         <div class="form-group <?= (isset($message['lastname'])) ? 'has-error' : ''?>">
           <label class="control-label" for="lastname">Nom :</label>
@@ -31,7 +34,7 @@
           <?= (isset($message['email']) ) ? '<span class="help-block">'.$message['email'].' </span>'  : '' ?>
         </div>
         <div class="form-check form-check-inline <?= (isset($message['Id_Ecole'])) ? 'has-error' : ''?>">
-          <label>Votre utilisateur fera partie de ? </label><br>
+          <label style="display: none">Votre utilisateur fera partie de ? </label><br>
         <?php if($w_user['Id_Ecole'] == 1) :?> 
             <label class="form-check-label" for="Id_Ecole">   
                 <input class="form-check-input" type="radio" id="Id_Ecole" name="Id_Ecole"  value="1"> EPSI

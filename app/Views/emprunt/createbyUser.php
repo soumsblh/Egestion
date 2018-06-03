@@ -2,6 +2,9 @@
 
 <?php $this->start('main_content') ?>
 <body class="align" id="homeco">
+<div>
+    <div style="margin-top: 200px"></div>
+</div>
 <div id="register">
     <div class="container register">
         <h1 class="text-center">Ajouter un Emprunt:</h1>

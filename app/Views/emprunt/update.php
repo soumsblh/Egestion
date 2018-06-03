@@ -1,10 +1,9 @@
 <?php $this->layout('layout', ['title' => 'event_update']); ?>
-
 <?php $this->start('main_content'); ?>
-
-
-
 <body  class="align" id="homeco">
+<div>
+    <div style="margin-top: 200px"></div>
+</div>
    <div class="container register">
      <h1>Modifier un Emprunt</h1>
         <div>
@@ -37,6 +36,11 @@
               <input type='text' name='id_Etat_1' class="form-control" value="<?= $emprunt['id_Etat_1']; ?>"  />
             </div>
             <button class="btn btn-submit">Editer l'emprunt</button>
+            <?php if ($w_user['role'] === 'admin') : ?>
+                <button  href="<?= $this->url('default_profile_admin') ?>" class="btn btn-default">Annuler</button>
+            <?php elseif ($w_user['role'] === 'user') :?>
+                <button  href="<?= $this->url('default_profile') ?>" class="btn btn-default">Annuler</button>
+            <?php endif ;?>
         </form>
     </div>
 </body>

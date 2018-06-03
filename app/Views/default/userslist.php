@@ -1,6 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Liste des utilisateurs Administrateur']) ?>
 
 <?php $this->start('main_content') ?>
+<meta http-equiv="refresh" content="2" >
 <div id="userslist">
   <div class="container-fluid">
     <div class="row">
@@ -60,7 +61,7 @@
               <form class="form-inline" method="post">
                 <select class="form-control" name="role">
                   <option disabled selected>Sélectionner le Role</option>
-                  <option class="" value="admin">Administrateur</option>
+                  <option class="" value="admin" >Administrateur</option>
                   <option class="" value="user">Utilisateur</option>
                 </select>
                 <button type="submit" name="button-<?= $list['id']; ?>">Changer le role</button>
